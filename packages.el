@@ -20,11 +20,12 @@
 ;; List of packages to exclude.
 (setq rspec-excluded-packages '())
 
-;; For each package, define a function rspec/init-<package-name>
-;;
-;; (defun rspec/init-my-package ()
-;;   "Initialize my package"
-;;   )
+(defun rspec/init-rspec-mode ()
+  "Initialize rspec-mode"
+  (use-package rspec-mode
+    :defer t
+    :config
+    (setq rspec-use-rake-when-possible nil)))
 ;;
 ;; Often the body of an initialize function uses `use-package'
 ;; For more info on `use-package', see readme:
